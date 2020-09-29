@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Album Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>These albums come highly recommended</h1>
+<div th:each="data : ${albumList}">
+    <h2 th:text="${data.title}">Album Title</h2>
+    <h3 th:text="${data.artist}">Artist</h3>
+    <img th:src="${data.imageUrl}" alt="album_cover">
+    <p th:text"'Number of tracks: ' + ${data.songCount}>Number of Tracks</p>
+    <p th:text="'Running Time: ' + ${data.length} + minutes'">Running Time</p>
+
+</div>
+</body>
+</html>
