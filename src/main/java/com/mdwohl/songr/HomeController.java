@@ -1,20 +1,17 @@
 package com.mdwohl.songr;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller//Spring knows to look at this class and establish controller
 public class HomeController {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String showHome() {//mapping needs to be pub and return string
-        return "hello world";
+        return "index";
     }
 
     @GetMapping("/greeting/{to}")

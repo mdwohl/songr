@@ -3,5 +3,10 @@
 }
 
 body {
-    margin: auto;
+    margin: 15px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
 }

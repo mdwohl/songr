@@ -11,8 +11,8 @@
     <h2 th:text="${data.title}">Album Title</h2>
     <h3 th:text="${data.artist}">Artist</h3>
     <img th:src="${data.imageUrl}" alt="album_cover">
-    <p th:text"'Number of tracks: ' + ${data.songCount}>Number of Tracks</p>
-    <p th:text="'Running Time: ' + ${data.length} + minutes'">Running Time</p>
+    <p th:text="'Number of tracks: ' + ${data.songCount}">Number of Tracks</p>
+    <p th:text="'Running Time: ' + ${data.length} + 'minutes'">Running Time</p>
 
 </div>
 </body>
