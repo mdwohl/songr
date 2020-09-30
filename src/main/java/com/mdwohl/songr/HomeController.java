@@ -33,7 +33,7 @@ public class HomeController {
         helloModel.addAttribute("days", lastSeenWhen);
         helloModel.addAttribute("greeting", greeting);
 
-        return "helloooo";
+        return "hello";
     }
 
         @GetMapping("/capitalize/{var}")
