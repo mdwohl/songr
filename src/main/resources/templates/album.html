@@ -14,6 +14,9 @@
     <p th:text="'Number of tracks: ' + ${data.songCount}">Number of Tracks</p>
     <p th:text="'Running Time: ' + ${data.length} + 'minutes'">Running Time</p>
 
+    <form th:action="'/albums/delete/' +{album.id}" method="POST">
+    <input type="submit" value="Delete"></form>
+
 </div>
 </body>
 </html>

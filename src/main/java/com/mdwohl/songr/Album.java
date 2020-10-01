@@ -1,12 +1,25 @@
 package com.mdwohl.songr;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
 public class Album {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long id;
 
     String title;
     String artist;
     String imageUrl;
     int songCount;
     int length;
+
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
+    public List<Song> songs = new ArrayList<Song>();
+
 
     public Album(String title, String artist, String imageUrl, int songCount, int length){
         this.title = title;
