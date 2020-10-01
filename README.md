@@ -1,3 +1,5 @@
+Lab by M Wohl, with help from Chandler Puckett and Matthew Petersen.
+
 To run app, it will need to be built in IntelliJ and accessed in browser at localhost:8080
 
 Home route "/":
