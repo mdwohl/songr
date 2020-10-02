@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller//Spring knows to look at this class and establish controller
@@ -14,26 +15,13 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/greeting/{to}")
-    public String greetPerson(
-            Model helloModel,
-            String person,
-            Integer lastSeenWhen,
-            String greeting,
-            @PathVariable String to) {
-        System.out.println("To :" + to);
-        System.out.println(String.format(
-                "Message from %s: " +
-                        "The last time I saw you was %d ago, %s",
-                person,
-                lastSeenWhen,
-                greeting));
+    @GetMapping("/hello")
+    @ResponseBody
+    public String helloWorld() {
+        return  "Hello world";
 
-        helloModel.addAttribute("person", person);
-        helloModel.addAttribute("days", lastSeenWhen);
-        helloModel.addAttribute("greeting", greeting);
 
-        return "hello";
+
     }
 
         @GetMapping("/capitalize/{var}")

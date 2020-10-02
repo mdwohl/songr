@@ -16,6 +16,10 @@ public class Song {
     int songLength;
     int trackNumber;
 
+    public Song(){
+        this.songTitle = "Song not found.";
+    }
+
     public Song(String songTitle, Album album, int songLength, int trackNumber){
         this.songTitle = songTitle;
         this.album = album;
