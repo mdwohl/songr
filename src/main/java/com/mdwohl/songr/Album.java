@@ -20,7 +20,9 @@ public class Album {
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     public List<Song> songs = new ArrayList<Song>();
 
-
+    public Album(){
+        this.title = "Title not found.";
+    }
     public Album(String title, String artist, String imageUrl, int songCount, int length){
         this.title = title;
         this.artist = artist;

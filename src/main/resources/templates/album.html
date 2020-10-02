@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" , xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Album Page</title>
@@ -7,6 +7,17 @@
 </head>
 <body>
 <h1>These albums come highly recommended</h1>
+
+<h2>Add your albums to the list!</h2>
+<form method="POST" action="/albums">
+    <input type="text" placeholder="Album Title" name="title">
+    <input type="text" placeholder="Album Artist" name="artist">
+    <input type="text" placeholder="Image URL" name="imageUrl">
+    <input type="number" placeholder="Song Count" name="songCount">
+    <input type="number" placeholder="Album Length" name="length">
+    <button type="submit">Submit Your Album</button>
+</form>
+
 <div th:each="data : ${albumList}">
     <h2 th:text="${data.title}">Album Title</h2>
     <h3 th:text="${data.artist}">Artist</h3>
@@ -14,8 +25,7 @@
     <p th:text="'Number of tracks: ' + ${data.songCount}">Number of Tracks</p>
     <p th:text="'Running Time: ' + ${data.length} + 'minutes'">Running Time</p>
 
-    <form th:action="'/albums/delete/' +{album.id}" method="POST">
-    <input type="submit" value="Delete"></form>
+<!--    <form th:action="'/albums/delete/' +{album.id}" method="POST">-->
 
 </div>
 </body>
